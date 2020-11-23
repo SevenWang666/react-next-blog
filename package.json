@@ -21,8 +21,8 @@
     "react-dom": "17.0.1"
   },
   "lint-staged": {
-    "*.{js,jsx,tsx,ts}": "npm run lint",
-    "*.{css}": "npm run lint:style"
+    "*.{js,jsx,tsx,ts}": "eslint 'pages/**/*.{js,jsx,tsx,ts}'",
+    "*.{css}": "stylelint '**/*.css'"
   },
   "husky": {
     "hooks": {
