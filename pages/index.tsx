@@ -5,6 +5,12 @@ import {
 } from 'antd';
 import '../styles/Home.module.css';
 
+import Link from 'next/link';
+
+import Head from 'next/head';
+
+import Layout from './components/layout';
+
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 },
@@ -51,53 +57,62 @@ export default function Login() {
   };
 
   return (
-    <div className="main">
-      <Form
-        {...layout}
-        name="basic"
-        initialValues={{ remember: true }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        style={{ width: '50%' }}
-      >
-        <Form.Item
-          label="Username"
-          name="username"
-          rules={[{ required: true, message: 'Please input your username!' }]}
-        >
-          <Input size="small" placeholder="large size" />
-        </Form.Item>
+    <>
+      <Layout>
+        <Head>
+          <title>Create Next App</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className="main">
+          <Form
+            {...layout}
+            name="basic"
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            style={{ width: '50%' }}
+          >
+            <Form.Item
+              label="Username"
+              name="username"
+              rules={[{ required: true, message: 'Please input your username!' }]}
+            >
+              <Input size="small" placeholder="large size" />
+            </Form.Item>
 
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[{ required: true, message: 'Please input your password!' }]}
-        >
-          <Input.Password size="small" placeholder="large size" />
-        </Form.Item>
+            <Form.Item
+              label="Password"
+              name="password"
+              rules={[{ required: true, message: 'Please input your password!' }]}
+            >
+              <Input.Password size="small" placeholder="large size" />
+            </Form.Item>
 
-        <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
+            <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+              <Checkbox>Remember me</Checkbox>
+            </Form.Item>
 
-        <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit">
-            Submit
+            <Form.Item {...tailLayout}>
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
+          <Modal
+            title="Title"
+            visible={visible}
+            onOk={handleOk}
+            confirmLoading={confirmLoading}
+            onCancel={handleCancel}
+          >
+            <p>{modalText}</p>
+          </Modal>
+          <Button type="primary" onClick={showModal}>
+            Open Modal with async logic
           </Button>
-        </Form.Item>
-      </Form>
-      <Modal
-        title="Title"
-        visible={visible}
-        onOk={handleOk}
-        confirmLoading={confirmLoading}
-        onCancel={handleCancel}
-      >
-        <p>{modalText}</p>
-      </Modal>
-      <Button type="primary" onClick={showModal}>
-        Open Modal with async logic
-      </Button>
-    </div>
+          <Link href="/settings/users">this page!</Link>
+        </div>
+      </Layout>
+    </>
   );
 }

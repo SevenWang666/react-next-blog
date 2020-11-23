@@ -24,5 +24,12 @@ module.exports = {
   rules: {
     'react/jsx-props-no-spreading': 0,
     'react/jsx-filename-extension': 'off',
+    'react/forbid-prop-types': [0],
+    'react/prop-types': [0],
+    'react/jsx-no-bind': [0],
+    'import/extensions': [0],
+    'import/no-unresolved': [0],
+    'import/no-extraneous-dependencies': [0],
+    'no-else-return': [0],
   },
 };
