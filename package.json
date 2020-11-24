@@ -7,27 +7,29 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint 'pages/**/*.{js,jsx,tsx,ts}'",
-    "lint:fix": "eslint 'pages/**/*.{js,jsx,tsx,ts}' --fix",
+    "lint:fix": "eslint '**/*.{js,jsx,tsx,ts}' --fix",
     "lint:style": "stylelint '**/*.css'",
     "lint:style:fix": "stylelint '**/*.css' --fix",
     "tcm": "tcm pages -c -w & tcm styles -c -w"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@zeit/next-css": "^1.0.1",
     "antd": "^4.8.4",
     "babel-plugin-import": "^1.13.1",
+    "gray-matter": "^4.0.2",
     "next": "10.0.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "remark-html": "^13.0.1"
   },
   "lint-staged": {
-    "*.{js,jsx,tsx,ts}": "eslint 'pages/**/*.{js,jsx,tsx,ts}'",
+    "*.{js,jsx,tsx,ts}": "eslint '**/*.{js,jsx,tsx,ts}'",
     "*.{css}": "stylelint '**/*.css'"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "eslintConfig": {

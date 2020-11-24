@@ -1,33 +1,29 @@
 {
   "compilerOptions": {
-    "allowJs": true, //允许编译js文件
+    "target": "es5",
     "lib": [
-      "ES2015"
-    ], //指定要包含在编译中的库文件
-    "module": "commonjs",
-    "outDir": "dist", //指定输出目录
-    "sourceMap": true, //生成相应的'.map'文件
-    "declaration": true, //生成相应的声明文件
-    "strict": true, //启用所有严格类型检查选项
-    "target": "es2015", //指定ecmascript目标版本
-    "checkJs": true,
-    "jsx": "preserve",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
     "skipLibCheck": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true
-    /* Enables experimental support for emitting type metadata for decorators. */
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
-    "pages",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }

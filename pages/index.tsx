@@ -1,118 +1,63 @@
-import React from 'react';
-
-import {
-  Form, Input, Button, Checkbox, Modal,
-} from 'antd';
-import '../styles/Home.module.css';
-
-import Link from 'next/link';
-
 import Head from 'next/head';
+import Link from 'next/link';
+import { GetStaticProps } from 'next';
+import Button from '@material-ui/core/Button';
+import Layout, { siteTitle } from '../components/layout';
+import utilStyles from '../styles/utils.module.css';
+import { getSortedPostsData } from '../lib/posts';
+import Date from '../components/date';
 
-import Layout from './components/layout';
-
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
-const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
-};
-
-interface ValidateErrorEntity<Values = any> {
-  values: Values;
-  errorFields: {
-      name: (string | number)[];
-      errors: string[];
-  }[];
-  outOfDate: boolean;
-}
-export default function Login() {
-  const [visible, setVisible] = React.useState(false);
-  const [confirmLoading, setConfirmLoading] = React.useState(false);
-  const [modalText, setModalText] = React.useState('Content of the modal');
-
-  const showModal = () => {
-    setVisible(true);
-  };
-
-  const handleOk = () => {
-    setModalText('The modal will be closed after two seconds');
-    setConfirmLoading(true);
-    setTimeout(() => {
-      setVisible(false);
-      setConfirmLoading(false);
-    }, 2000);
-  };
-
-  const handleCancel = () => {
-    setVisible(false);
-  };
-  const onFinish = (values:string) => {
-    setModalText(values);
-  };
-
-  const onFinishFailed = (errorInfo:ValidateErrorEntity<string>) => {
-    setModalText(errorInfo.values);
-  };
-
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: {
+    date: string,
+    title: string,
+    id: string
+  }[]
+}) {
   return (
-    <>
-      <Layout>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <div className="main">
-          <Form
-            {...layout}
-            name="basic"
-            initialValues={{ remember: true }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            style={{ width: '50%' }}
-          >
-            <Form.Item
-              label="Username"
-              name="username"
-              rules={[{ required: true, message: 'Please input your username!' }]}
-            >
-              <Input size="small" placeholder="large size" />
-            </Form.Item>
-
-            <Form.Item
-              label="Password"
-              name="password"
-              rules={[{ required: true, message: 'Please input your password!' }]}
-            >
-              <Input.Password size="small" placeholder="large size" />
-            </Form.Item>
-
-            <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-              <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-
-            <Form.Item {...tailLayout}>
-              <Button type="primary" htmlType="submit">
-                Submit
-              </Button>
-            </Form.Item>
-          </Form>
-          <Modal
-            title="Title"
-            visible={visible}
-            onOk={handleOk}
-            confirmLoading={confirmLoading}
-            onCancel={handleCancel}
-          >
-            <p>{modalText}</p>
-          </Modal>
-          <Button type="primary" onClick={showModal}>
-            Open Modal with async logic
-          </Button>
-          <Link href="/settings/users">this page!</Link>
-        </div>
-      </Layout>
-    </>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <section className={utilStyles.headingMd}>
+        <p>[Your Self Introduction]</p>
+        <p>
+          (This is a sample website - you’ll be building a site like this in
+          {' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>
+          .)
+        </p>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
+            </li>
+          ))}
+        </ul>
+        <Button variant="contained" color="primary">
+          你好，世界
+        </Button>
+      </section>
+    </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+};
