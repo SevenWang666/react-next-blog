@@ -1,39 +1,16 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',
   ],
-  extends: ['airbnb'],
-  parserOptions: {
-    project: './tsconfig.json',
-  },
-  env: {
-    browser: true,
-    es6: true,
-    node: true,
-  },
-  // parserOptions: {
-  //   'ecmaVersion': 2018,
-  //   'sourceType': 'module'
-  // },
-  // extends: [
-  //   'eslint:recommended',
-  //   'plugin:@typescript-eslint/recommended'
-  // ],
-  rules: {
-    'react/jsx-props-no-spreading': 0,
-    'react/jsx-filename-extension': 'off',
-    'react/forbid-prop-types': [0],
-    'react/prop-types': [0],
-    'react/jsx-no-bind': [0],
-    'import/extensions': [0],
-    'import/no-unresolved': [0],
-    'import/no-extraneous-dependencies': [0],
-    'no-else-return': [0],
-    'react/react-in-jsx-scope': [0],
-    'jsx-a11y/anchor-is-valid': 0,
-    'react/no-danger': 0,
-    'react/require-default-props': 0,
-  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  rules:{
+    'no-undef':0,
+    '@typescript-eslint/explicit-module-boundary-types':0,
+    '@typescript-eslint/no-explicit-any':0,
+  }
 };

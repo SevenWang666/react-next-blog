@@ -2,7 +2,6 @@ import React from 'react';
 import { Progress } from 'antd';
 import Link from 'next/link';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class Users extends React.Component {
   render() {
     return (
