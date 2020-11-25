@@ -19,6 +19,14 @@ module.exports = {
     "space-before-function-paren": "off",
     "@typescript-eslint/space-before-function-paren": ["error"],
     "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": ["error"]
+    "@typescript-eslint/no-empty-function": ["error"],
+    '@typescript-eslint/dot-notation': 'off',
+    // TODO performance consideration
+    '@typescript-eslint/no-implied-eval': 'off',
+    // TODO performance consideration
+    '@typescript-eslint/no-throw-literal': 'off',
+    'no-alert': 'error',
+    // Allow warn and error for dev environments
+    'no-console': [1, { allow: ['warn'] }],
   }
 };
