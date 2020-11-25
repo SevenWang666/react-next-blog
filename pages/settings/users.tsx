@@ -3,7 +3,7 @@ import { Progress } from 'antd';
 import Link from 'next/link';
 
 class Users extends React.Component {
-  render() {
+  render () {
     return (
       <div style={{ width: 170 }}>
         <Progress percent={30} size="small" />
