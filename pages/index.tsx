@@ -48,6 +48,9 @@ export default function Home ({
         <Button variant="contained" color="primary">
           你好，世界,我将开始创建博客网站
         </Button>
+        <Link href='/settings/users'>
+          <a>登录注册</a>
+        </Link>
       </section>
     </Layout>
   );
