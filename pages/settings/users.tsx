@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 
-class Users extends React.Component<{name:string},{text?:string}> {
+class Users extends React.Component<{text,},{text?:string}> {
   value:string;
   constructor (props){
     super(props);
