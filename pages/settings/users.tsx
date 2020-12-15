@@ -12,6 +12,7 @@ class Users extends React.Component<{text,},{text?:string}> {
     this.value = e.target.value;
     this.setState({text: e.target.value});
   }
+  
   render () {
     return (
       <div style={{ width: 170 }}>

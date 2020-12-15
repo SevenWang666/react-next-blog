@@ -51,6 +51,9 @@ export default function Home ({
         <Link href='/settings/users'>
           <a>登录注册</a>
         </Link>
+        <Link href='/settings/login'>
+          <a>登录</a>
+        </Link>
       </section>
     </Layout>
   );
