@@ -4,18 +4,18 @@ import { FormControl,InputLabel,FormHelperText,Input} from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
-    },
-  }),
-);
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     root: {
+//       '& > *': {
+//         margin: theme.spacing(1),
+//         width: '25ch',
+//       },
+//     },
+//   }),
+// );
 
-const classes = useStyles();
+// const classes = useStyles();
 class Login extends React.Component {
   constructor (props){
     super(props);
@@ -37,7 +37,7 @@ class Login extends React.Component {
             <FormHelperText id="my-helper-text">密码</FormHelperText>
           </FormControl>
         </div>
-        <form className={classes.root} noValidate autoComplete="off">
+        <form  noValidate autoComplete="off">
           <TextField id="standard-basic" label="Standard" />
           <TextField id="filled-basic" label="Filled" variant="filled" />
           <TextField id="outlined-basic" label="Outlined" variant="outlined" />
