@@ -54,6 +54,9 @@ export default function Home ({
         <Link href='/settings/login'>
           <a>登录</a>
         </Link>
+        <Link href='/blog/Blog'>
+          <a>blog</a>
+        </Link>
       </section>
     </Layout>
   );
