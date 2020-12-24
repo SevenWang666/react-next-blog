@@ -48,13 +48,13 @@ export default function Home ({
         <Button variant="contained" color="primary">
           abc
         </Button>
-        <Link href='/sign-up/SignUp'>
+        <Link href='/sign-up/signUp'>
           <a>注册</a>
         </Link>
-        <Link href='/sign-in/SignIn'>
+        <Link href='/sign-in/signIn'>
           <a>登录</a>
         </Link>
-        <Link href='/blog/Blog'>
+        <Link href='/blog/blog'>
           <a>blog</a>
         </Link>
       </section>
