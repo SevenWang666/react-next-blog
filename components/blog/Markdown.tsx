@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import ReactMarkdown from 'markdown-to-jsx';
 import {
   Theme,

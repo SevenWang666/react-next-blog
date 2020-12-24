@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
@@ -37,7 +37,7 @@ export default function Header (props: HeaderProps) {
   const { sections, title } = props;
 
   return (
-    <React.Fragment>
+    <>
       <Toolbar className={classes.toolbar}>
         <Button size="small">Subscribe</Button>
         <Typography
@@ -71,6 +71,6 @@ export default function Header (props: HeaderProps) {
           </Link>
         ))}
       </Toolbar>
-    </React.Fragment>
+    </>
   );
 }
