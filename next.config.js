@@ -29,4 +29,13 @@ module.exports ={
     pagesBufferLength: 2,
   },
   reactStrictMode: true,
+  webpack:(config)=>{
+    config.module.rules.push(
+      {
+        test: /\.md$/,
+        loader: 'raw-loader',
+      },
+    );
+    return config;
+  }
 };

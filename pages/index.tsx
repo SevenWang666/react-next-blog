@@ -48,10 +48,10 @@ export default function Home ({
         <Button variant="contained" color="primary">
           abc
         </Button>
-        <Link href='/settings/users'>
-          <a>登录注册</a>
+        <Link href='/sign-up/SignUp'>
+          <a>注册</a>
         </Link>
-        <Link href='/settings/login'>
+        <Link href='/sign-in/SignIn'>
           <a>登录</a>
         </Link>
         <Link href='/blog/Blog'>
