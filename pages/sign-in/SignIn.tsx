@@ -106,9 +106,12 @@ export default function SignIn () {
           </Grid>
         </form>
       </div>
-      <Box sx={{ mt: 8, mb: 4 }}>
+      <Box>
         <Copyright />
       </Box>
+      {/* <Box sx={{ mt: 8, mb: 4 }}>
+        <Copyright />
+      </Box> */}
     </Container>
   );
 }
