@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import Button from '@material-ui/core/Button';
+import { withRouter } from 'next/router';
 
-
-class Users extends React.Component<{text,},{text?:string}> {
+class Users extends React.Component<{text,router},{text?:string}> {
   value:string;
   constructor (props){
     super(props);
@@ -17,6 +18,9 @@ class Users extends React.Component<{text,},{text?:string}> {
     return (
       <div style={{ width: 170 }}>
         <Link href="/">come back </Link>
+        <Button variant="outlined" size="small" onClick={()=>{this.props.router.push('/');}}>
+          main page
+        </Button>
         <input onChange={(e)=>{this.handleSearch(e);}}/>
         <span>{this.state.text}</span>
       </div>
@@ -24,4 +28,4 @@ class Users extends React.Component<{text,},{text?:string}> {
   }
 }
 
-export default Users;
+export default withRouter(Users);

@@ -48,6 +48,9 @@ export default function Home ({
         <Button variant="contained" color="primary">
           abc
         </Button>
+        <Link href='/settings/users'>
+          <a>用户</a>
+        </Link>
         <Link href='/sign-up/signUp'>
           <a>注册</a>
         </Link>

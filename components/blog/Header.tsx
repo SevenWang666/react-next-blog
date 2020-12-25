@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -35,6 +36,8 @@ interface HeaderProps {
 export default function Header (props: HeaderProps) {
   const classes = useStyles();
   const { sections, title } = props;
+  const router = useRouter();
+  
 
   return (
     <>
@@ -53,7 +56,7 @@ export default function Header (props: HeaderProps) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <Button variant="outlined" size="small">
+        <Button variant="outlined" size="small" onClick={()=>{router.push('/sign-up/signUp');}}>
           Sign up
         </Button>
       </Toolbar>

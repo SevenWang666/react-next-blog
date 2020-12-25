@@ -15,6 +15,7 @@ import Footer from '../../components/blog/Footer';
 import post1 from '../../components/blog/blog-post.md';
 import post2 from '../../components/blog/blog-post.2.md';
 import post3 from '../../components/blog/blog-post.3.md';
+import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
