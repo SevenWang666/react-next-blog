@@ -4,18 +4,20 @@ import matter from 'gray-matter';
 import remark from 'remark';
 import html from 'remark-html';
 
+//获取psots文件夹的地址
 const postsDirectory = path.join(process.cwd(), 'posts');
 
 export function getSortedPostsData () {
-  // Get file names under /posts
+  
+  // 获取/posts文件夹下的文件名
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
+    // 删除文件名的.md后缀
     const id = fileName.replace(/\.md$/, '');
 
     // Read markdown file as string
     const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, 'utf8');//以utf8编码形式返回文件缓冲内容
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
@@ -26,7 +28,7 @@ export function getSortedPostsData () {
       ...(matterResult.data as { date: string; title: string }),
     };
   });
-  // Sort posts by date
+  // 对文档进行排序
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
