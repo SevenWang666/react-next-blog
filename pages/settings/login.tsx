@@ -57,14 +57,14 @@ class Login extends React.Component<{classes}> {
           <FormControl>
             <InputLabel htmlFor="my-input">账号</InputLabel>
             <Input id="my-input" aria-describedby="my-helper-text" />
-            <FormHelperText id="my-helper-text">账号123</FormHelperText>
+            <FormHelperText id="my-helper-text">seven</FormHelperText>
           </FormControl>
         </div>
         <div>
           <FormControl>
             <InputLabel htmlFor="my-input">密码</InputLabel>
             <Input id="my-input" aria-describedby="my-helper-text" />
-            <FormHelperText id="my-helper-text">密码123</FormHelperText>
+            <FormHelperText id="my-helper-text">abcdefg</FormHelperText>
           </FormControl>
         </div>
         <form className={classes.root} noValidate autoComplete="off">

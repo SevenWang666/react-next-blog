@@ -19,7 +19,7 @@ class Users extends React.Component<{text,router},{text?:string}> {
       <div style={{ width: 170 }}>
         <Link href="/">come back </Link>
         <Button variant="outlined" size="small" onClick={()=>{this.props.router.push('/');}}>
-          main page
+          主页面
         </Button>
         <input onChange={(e)=>{this.handleSearch(e);}}/>
         <span>{this.state.text}</span>
