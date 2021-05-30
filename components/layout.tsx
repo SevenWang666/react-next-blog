@@ -3,8 +3,9 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
+import userImage from './images/user.png';
 
-const name = '[Your Name]';
+const name = 'xincheng';
 export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout ({
@@ -35,7 +36,7 @@ export default function Layout ({
         {home ? (
           <>
             <img
-              src="/images/profile.jpg"
+              src={userImage}
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
             />
@@ -46,7 +47,7 @@ export default function Layout ({
             <Link href="/">
               <a>
                 <img
-                  src="/images/profile.jpg"
+                  src={userImage}
                   className={`${styles.headerImage} ${utilStyles.borderCircle}`}
                   alt={name}
                 />
