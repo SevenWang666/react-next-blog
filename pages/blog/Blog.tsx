@@ -6,15 +6,15 @@ import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import Header from '../../components/blog/Header';
-import MainFeaturedPost from '../../components/blog/MainFeaturedPost';
-import FeaturedPost from '../../components/blog/FeaturedPost';
-import Main from '../../components/blog/Main';
-import Sidebar from '../../components/blog/Sidebar';
-import Footer from '../../components/blog/Footer';
-import post1 from '../../components/blog/blog-post.md';
-import post2 from '../../components/blog/blog-post.2.md';
-import post3 from '../../components/blog/blog-post.3.md';
+import Header from 'components/blog/Header';
+import MainFeaturedPost from 'components/blog/MainFeaturedPost';
+import FeaturedPost from 'components/blog/FeaturedPost';
+import Main from 'components/blog/Main';
+import Sidebar from 'components/blog/Sidebar';
+import Footer from 'components/blog/Footer';
+import post1 from 'components/blog/blog-post.md';
+import post2 from 'components/blog/blog-post.2.md';
+import post3 from 'components/blog/blog-post.3.md';
 
 
 const useStyles = makeStyles((theme) => ({

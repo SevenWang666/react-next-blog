@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import Button from '@material-ui/core/Button';
-import Layout from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import Layout from 'components/layout';
+import utilStyles from 'styles/utils.module.css';
+import { getSortedPostsData } from 'lib/posts';
 import Grid from '@material-ui/core/Grid';
 import Date from '../components/date';
 

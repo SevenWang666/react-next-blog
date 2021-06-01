@@ -1,4 +1,4 @@
-import '../styles/global.css';
+import 'styles/global.css';
 import "vditor/src/assets/scss/index.scss";
 import { AppProps } from 'next/app';
 
