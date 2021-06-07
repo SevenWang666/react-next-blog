@@ -44,20 +44,7 @@ export default function Layout ({
           </>
         ) : (
           <>
-            <Link href="/">
-              <a>
-                <img
-                  src={userImage}
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
+           
           </>
         )}
       </header>
