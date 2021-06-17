@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Button from '@material-ui/core/Button';
 import Vditor from 'vditor';
 import Container from '@material-ui/core/Container';
+import utilStyles from 'styles/settings/users.module.css';
 import { withRouter } from 'next/router';
 
 class Users extends React.Component<{text,router},{text?:string}> {
@@ -34,15 +35,14 @@ class Users extends React.Component<{text,router},{text?:string}> {
   
   render () {
     return (
-      <Container component="main" maxWidth="xs">
+      <Container component="main">
         <Link href="/">come back </Link>
         <Button variant="outlined" size="small" onClick={()=>{this.props.router.push('/');}}>
           主页面
         </Button>
         <input onChange={(e)=>{this.handleSearch(e);}}/>
         <span>{this.state.text}</span>
-        <div id="vditor"></div>
-
+        <div id="vditor" className={utilStyles.vditorWidth} ></div>
       </Container>
     );
   }

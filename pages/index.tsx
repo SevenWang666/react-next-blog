@@ -6,7 +6,7 @@ import Layout from 'components/layout';
 import utilStyles from 'styles/utils.module.css';
 import { getSortedPostsData } from 'lib/posts';
 import Grid from '@material-ui/core/Grid';
-import Date from '../components/date';
+import Date from 'components/date';
 
 export default function Home ({
   allPostsData,
