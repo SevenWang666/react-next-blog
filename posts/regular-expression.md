@@ -24,3 +24,65 @@ date: "2021-01-02"
 **第⼆，能写注释的正则表达式，⼀定要写注释**。正则表达式的语法非常古老，不够直观，为了便于阅读和维护，如今大部分语言里都可以通过 x 打开注释模式。有了注释，复杂正则表达式的结构也能一目了然。
 
 **第三，能用多个简单正则表达式解决的，⼀定不要苛求用一个复杂的正则表达式**。这里最明显的例子就是输入条件的验证。比如说，常见的密码要求“必须包含数字、小写字母、大写字母、特殊符号中的至少两种，且长度在 8 到 16 之间”。
+
+
+
+### 元字符的概念
+
+
+
+元字符就是指那些在正则表达式中具有特殊意义的专用字符
+
+
+
+![image-20210728220523067](https://tva1.sinaimg.cn/large/008i3skNgy1gsx0kna8t9j30u00vq76o.jpg)
+
+
+
+### 贪婪模式
+
+**定义**：表示次数的量词，尽可能最大长度去匹配字符串
+
+```js
+let regexp = /a*/g;
+let str = 'aaabb';
+let array = [...str.matchAll(regexp)];
+console.log(array)
+```
+
+结果如下:
+
+![image-20210728224622226](https://tva1.sinaimg.cn/large/008i3skNgy1gsx1r8lhb8j30om04k757.jpg)
+
+使用 a* 在 aaabb 这个字符串中进行查找，这次我们看到可以找到 4 个匹配结果
+
+![image-20210728225205119](https://tva1.sinaimg.cn/large/008i3skNgy1gsx1x70sjgj30gy086dg9.jpg)
+
+a* 在匹配开头的 a 时，会尝试尽量匹配更多的 a，直到第一个字母 b 不满足要求为止，匹配上三个 a，后面每次匹配时都得到了空字符串。
+
+
+
+### 非贪婪模式
+
+**定义**："数量"元字符后加?,找出长度最小且满足要求的的字符串， 尽可能短地去匹配字符串
+
+
+
+
+
+### 独占模式
+
+
+
+
+
+### 正则网站or软件
+
+1.  https://regex101.com/ 
+2.  https://tool.oschina.net/regex/
+3.  http://tool.chinaz.com/regex/
+4.  https://www.w3cschool.cn/tools/index?name=re
+5.  https://c.runoob.com/front-end/854
+6.  http://tools.haokh.net/Regex
+7.  Windows 上推荐：RegexBuddy
+8.  Mac上推荐：Expressions
