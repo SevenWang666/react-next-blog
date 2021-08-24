@@ -1,0 +1,36 @@
+
+stages:
+  - hfins-expense-manage
+
+hfins-expense-manage:
+  stage: hfins-expense-manage
+  script:
+    - npm config set registry https://registry.npm.taobao.org/
+    - node_module
+    - node_build
+    - cp -r dist ./docker/prod
+  only:
+    - master
+    - tags
+    - develop
+
+.auto_devops: &auto_devops |
+  http_status_code=`curl -o .auto_devops.sh -s -m 10 --connect-timeout 10 -w %{http_code} "${CHOERODON_URL}/devops/ci?token=${Token}&type=front"`
+  if [ "$http_status_code" != "200" ]; then
+    cat .auto_devops.sh
+    exit 1
+  fi
+  source .auto_devops.sh
+  function node_module(){
+      mkdir -p /cache/${CI_PROJECT_NAME}-${CI_PROJECT_ID}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
+      yarn --registry=http://nexus.saas.hand-china.com/repository/hzero-npm-group/
+  }
+
+  function node_build(){
+      chmod -R 777 node_modules
+      yarn run build
+  }
+
+before_script:
+  - *auto_devops
+
