@@ -123,6 +123,11 @@ re.findall('xy{1,3}+yz','xyyz')
 
 
 
+**造成回溯的条件**
+
+* 多分枝结构
+* 量词
+
 ### 分组与引用
 
 分组用括号括起
@@ -142,7 +147,7 @@ re.findall('xy{1,3}+yz','xyyz')
 
 ![image-20210801220645844](https://tva1.sinaimg.cn/large/008i3skNgy1gt1n39gosfj30g503owej.jpg)
 
-不保存子组可以提高正则性能
+不保存子组可以提高正则性能 在括号里面加?:
 
 保存子组后续可以继续使用
 
@@ -265,14 +270,96 @@ console.log(template.match(regex));
 
 
 
+### 转义
+
+​	在计算机科学与远程通信中，当转义字符放在字符序列中，它将对它后续的几个字符进行替代并解释。通常，判定某字符是否为转义字符由上下文确定。转义字符即标志着转义序列开始的那个字符。
+
+
+
+#### 字符串转义
+
+字符串转义：输入字符串到字符串文本的过程
+
+#### 正则转义
+
+正则文字到正则表达式的过程
+
+```shell
+const str = '\\n\n\\'
+const sources = ['\n', '\\n', '\\\n', '\\\\n']
+const regs = []
+
+sources.forEach(s => regs.push(new RegExp(s, 'g')))
+regs.forEach(reg => {
+  console.log('[current reg] ', reg)
+  let once_match = reg.exec(str)
+  console.log('[result]', once_match)
+})
+```
+
+
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtuna2hkc5j60eo03uaak02.jpg" alt="image-20210827001438104"  />
+
+
+
+![image-20210827001634487](https://tva1.sinaimg.cn/large/008i3skNgy1gtunc1jkkrj6130096glv02.jpg)
+
+### 正则有哪些常见的流派及其特性
 
 
 
 
-造成回溯的条件
 
-* 多分枝结构
-* 量词
+### 正则处理Unicode
+
+​	
+
+#### Unicode基础知识
+
+Unicode（中文：万国码、国际码、统一码、单一码）是计算机科学领域里的一项业界标准。它对世界上大部分的文字进行了整理、编码。Unicode 使计算机呈现和处理文字变得简单。
+
+
+
+Unicode 至今仍在不断增修，每个新版本都加入更多新的字符。目前 Unicode 最新的版本为 2020 年 3 月 10 日公布的 13.0.0，已经收录超过 14 万个字符。
+
+
+
+现在的 Unicode 字符分为 17 组编排，每组为一个平面（Plane），而每个平面拥有 65536（即 2 的 16 次方）个码值（Code Point）。然而，目前 Unicode 只用了少数平面，我们用到的绝大多数字符都属于第 0 号平面，即 BMP 平面。除了 BMP 平面之外，其它的平面都被称为补充平面。
+
+
+
+
+
+### 如何在编辑器中使用正则完成工作
+
+
+
+#### 多焦点编辑
+
+
+
+#### 竖向编辑
+
+
+
+
+
+### 如何在语言中用正则让文本处理能力上一个台阶
+
+
+
+### 如何理解正则的匹配原理以及优化原则
+
+
+
+### 详解正则常见问题及解决方案
+
+
+
+### 从编程语言的角度来理解正则表达式
+
+
 
 
 
